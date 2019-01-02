@@ -2,10 +2,12 @@ import React from 'react';
 
 
 function ListItem(props) {
-    return (
-        
+    return ( 
         <div className="todo-item">
-            <input type="checkbox" id={props.id} checked={props.item.completed} />
+            <input 
+                type="checkbox"
+                checked={props.item.completed}
+                onChange={() => props.handleChange(props.item.id)}  />
             <label for={props.id}>{props.item.text}</label>
         </div>
     );
